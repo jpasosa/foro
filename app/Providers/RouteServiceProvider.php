@@ -28,6 +28,8 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
     }
 
+
+
     /**
      * Define the routes for the application.
      *
@@ -35,6 +37,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        
         $this->mapApiRoutes();
 
         $this->mapPublicRoutes();
@@ -58,6 +61,8 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
+
+
     protected function mapGuestRoutes()
     {
         Route::group([
@@ -67,6 +72,8 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/guest.php');
         });
     }
+
+
 
     protected function mapAuthRoutes()
     {
@@ -97,4 +104,6 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+
+
 }
