@@ -48,14 +48,13 @@ class CreatePostsTest extends FeatureTestCase
 	// 	$title = 'Esta es una pregunta';
 	// 	$content = 'Este es el contenido';
 
-
+		
 	// 	// WHEN . . lo que sucede, los eventos
 	// 	// $this->actingAs( $user )
 	// 		$this->visit(route('posts.create'))
 	// 			->type( $title, 'title')
 	// 			->type( $content, 'content')
 	// 			->press('Publicar');
-
 
 	// 	// THEN . ..  esperamos un resultado
 	// 	$this->seeInDatabase('posts', [
