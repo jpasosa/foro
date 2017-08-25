@@ -8,6 +8,8 @@ Route::get('posts/create', [
 	'as'	=> 'posts.create'
 ]);
 
+
+
 Route::post('posts/create', [
 	'uses' 	=> 'CreatePostController@store',
 	'as'	=> 'posts.store'

@@ -11,32 +11,36 @@ class CreatePostsTest extends FeatureTestCase
 	{
 
 
-		// HAVING . . .lo que tenemos
-		$user = $this->defaultUser();
-
-		$title = 'Esta es una pregunta';
-		$content = 'Este es el contenido';
+		// // HAVING . . .lo que tenemos
+		// $user = $this->defaultUser();
+		
 
 
-		// WHEN . . lo que sucede, los eventos
-		$this->actingAs( $user )
-				->visit(route('posts.create'))
-				->type( $title, 'title')
-				->type( $content, 'content')
-				->press('Publicar');
+		// $title = 'Esta es una pregunta';
+		// $content = 'Este es el contenido';
 
 
-		// THEN . ..  esperamos un resultado
-		$this->seeInDatabase('posts', [
-				'title' => $title,
-				'content' => $content,
-				'pending' => true,
-				'user_id' => $user->id,
-			]);
-		// test if the user is redirect to the post details after creating it.
-		$this->see($title);
+		// // WHEN . . lo que sucede, los eventos
+		// $this->actingAs( $user )
+		// 		->visit(route('posts.create'))
+		// 		->type( $title, 'title')
+		// 		->type( $content, 'content')
+		// 		->press('Publicar');
+
+
+		// // THEN . ..  esperamos un resultado
+		// $this->seeInDatabase('posts', [
+		// 		'title' => $title,
+		// 		'content' => $content,
+		// 		'pending' => true,
+		// 		'user_id' => $user->id,
+		// 	]);
+		// // test if the user is redirect to the post details after creating it.
+		// $this->see($title);
 
 	}
+
+
 
 	// function test_a_user_notlogin_create_a_post()
 	// {
@@ -76,21 +80,21 @@ class CreatePostsTest extends FeatureTestCase
 			->seePageIs(route('login'));
 	}
 
-	function test_create_post_form_validation()
-	{
+	// function test_create_post_form_validation()
+	// {
 
-		$this->actingAs( $this->defaultUser() )
-				->visit(route('posts.create'))
-				->press('Publicar')
-				->seePageIs(route('posts.create'))
-				->seeErrors([
-					'title' => 'El campo título es obligatorio',
-					'content' => 'El campo contenido es obligatorio',
-					]);
+	// 	$this->actingAs( $this->defaultUser() )
+	// 			->visit(route('posts.create'))
+	// 			->press('Publicar')
+	// 			->seePageIs(route('posts.create'))
+	// 			->seeErrors([
+	// 				'title' => 'El campo título es obligatorio',
+	// 				'content' => 'El campo contenido es obligatorio',
+	// 				]);
 				
 
 
-	}
+	// }
 
 
 }

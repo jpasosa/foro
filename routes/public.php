@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +13,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
 
 Route::get('/', function ()
 {
@@ -23,10 +30,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
-Route::get('/posts/{post}',function()
+Route::get('/posts/{post}',function( Post $post)
 {
 	return view('posts.show', compact('post'));
-});
+})->name('posts.show');
 
 
  
